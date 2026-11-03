@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Admin Profile – Security Remediation: WI-000002
+    Previously contained an overly permissive IP range (0.0.0.0 – 255.255.255.255)
+    that allowed logins from any IP address, violating CWE-284 (Improper Access Control).
+
+    Remediation:
+    - Removed the unrestricted 0.0.0.0/255.255.255.255 login IP range.
+    - Restricted admin access to the corporate network range only
+      (192.168.1.0 – 192.168.1.255) as approved by the security team.
+-->
+<Profile xmlns="http://soap.sforce.com/2006/04/metadata">
+    <custom>false</custom>
+    <description>Standard System Administrator profile with restricted IP login ranges.</description>
+    <fullName>Admin</fullName>
+    <loginHours>
+        <weekdayStart>Sunday</weekdayStart>
+        <sundayStart>0</sundayStart>
+        <sundayEnd>0</sundayEnd>
+        <mondayStart>0</mondayStart>
+        <mondayEnd>1440</mondayEnd>
+        <tuesdayStart>0</tuesdayStart>
+        <tuesdayEnd>1440</tuesdayEnd>
+        <wednesdayStart>0</wednesdayStart>
+        <wednesdayEnd>1440</wednesdayEnd>
+        <thursdayStart>0</thursdayStart>
+        <thursdayEnd>1440</thursdayEnd>
+        <fridayStart>0</fridayStart>
+        <fridayEnd>1440</fridayEnd>
+        <saturdayStart>0</saturdayStart>
+        <saturdayEnd>0</saturdayEnd>
+    </loginHours>
+    <loginIpRanges>
+        <!-- Corporate network only – replaces the previous unrestricted 0.0.0.0/255.255.255.255 range -->
+        <description>Corporate internal network</description>
+        <endAddress>192.168.1.255</endAddress>
+        <startAddress>192.168.1.0</startAddress>
+    </loginIpRanges>
+    <userLicense>Salesforce</userLicense>
+</Profile>
