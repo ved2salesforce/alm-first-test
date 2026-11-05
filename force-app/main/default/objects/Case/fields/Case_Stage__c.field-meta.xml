@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case_Stage__c</fullName>
+    <externalId>false</externalId>
+    <label>Case Stage</label>
+    <required>false</required>
+    <restricted>true</restricted>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Triage</fullName>
+                <default>false</default>
+                <label>Triage</label>
+            </value>
+            <value>
+                <fullName>Investigating</fullName>
+                <default>false</default>
+                <label>Investigating</label>
+                <color>#FF8000</color>
+            </value>
+            <value>
+                <fullName>Escalated</fullName>
+                <default>false</default>
+                <label>Escalated</label>
+                <color>#FF0000</color>
+            </value>
+            <value>
+                <fullName>Resolved</fullName>
+                <default>true</default>
+                <label>Resolved</label>
+                <color>#4AAE4F</color>
+            </value>
+            <value>
+                <fullName>Deferred</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Deferred</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
